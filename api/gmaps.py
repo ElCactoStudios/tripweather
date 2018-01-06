@@ -30,6 +30,12 @@ for set in lat_long_set:
     current = set
     if prev is not None:
         running_total += get_distances([prev, current])
+    else:
+        point = current
+    if running_total > 100:
+        print(f'Distance: {running_total}, Start Point: {point}, End Point: {current}')
+        point = current
+        running_total = 0
 
 
 
